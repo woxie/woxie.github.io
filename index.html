@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+.flex-container {
+  display: flex;
+}
+
+.fill-width {
+  flex: 1;
+}
+</style>
+
 <body>
-<div>
-field 1 :<input type="text"/>
+
+<div class="flex-container">
+	<input class="fill-width" type="text" />
 </div>
-<div>
-field 2:<input type="text"/>    
+
+<div class="flex-container">
+	<input class="fill-width" type="text" />
 </div>
+
 </body>
 </html>
