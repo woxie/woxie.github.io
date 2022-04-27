@@ -27,7 +27,7 @@
   display: block;
   width: 100%;
   border: none;
-  background-color: #41B562;
+  background-color: #37a6e6;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
@@ -37,7 +37,7 @@
 
 <body>
 
-<button type="button" class="block2" onclick="sustituir()">Copiar hora</button>
+<button type="button" class="block2" onclick="timestamp()">Copiar hora</button>
 
     <div class="wrapper">
 	Texto original
@@ -84,6 +84,25 @@ search.forEach(function(reg, index){
 
 		});
   document.getElementById("sustituido").value = productoTitulo
+}
+
+function timestamp() {
+const fecha = new Date(); 
+var fechahora = (Date.now()-fecha.getTimezoneOffset()*60000)/(1000*60*60*24)+25569
+copyToClipboard(fechahora)
+}
+
+function copyToClipboard(text) {
+    var dummy = document.createElement("textarea");
+    // to avoid breaking orgain page when copying more words
+    // cant copy when adding below this code
+    // dummy.style.display = 'none'
+    document.body.appendChild(dummy);
+    //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
 }
 </script>
 </html>
