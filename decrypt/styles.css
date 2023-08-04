@@ -1,0 +1,9 @@
+#box{
+    position: relative;
+    margin: 50px;
+}
+
+textarea{
+    /* position: absolute; */
+    width: 100%;
+}

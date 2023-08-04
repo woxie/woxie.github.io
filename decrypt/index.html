@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer
+        src="https://raw.githubusercontent.com/mdp/gibberish-aes/master/dist/gibberish-aes-1.0.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Pega el link aquí:</h1>
+    <div style="display: block;">
+        <textarea oninput="decrypt(currentTarget.value)" name="urls" id="urls" cols="30" rows="10"></textarea>
+    </div>
+    <h1>Resultado:</h1>
+    <div style="display: block;">
+        <textarea name="resultado" id="resultado" cols="30" rows="10"></textarea>
+    </div>
+    <script>
+        function bar(text) {
+            return text.replace(" ", "x");
+        }
+        function decrypt(url) {
+            let fragment = url.substring(url.indexOf("=") + 1);
+            const key = "fee631d2cffda38a78b96ee6d2dfb43a";
+            let decodedUrl = atob(fragment);
+            let decryptedUrl = GibberishAES.dec(decodedUrl, key);
+            document.getElementById("resultado").value = decryptedUrl;
+            console.log(decryptedUrl)
+        }
+    </script>
+</body>
+
+</html>
