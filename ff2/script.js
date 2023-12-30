@@ -67,6 +67,10 @@ async function getDataPerAccount(){
     console.log(dataPerAccount);
 }
 
+async function createTable(){
+
+}
+
 // filterOutErrors();
 // filterByType();
 getDataPerAccount();
