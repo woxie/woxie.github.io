@@ -189,12 +189,11 @@ async function insertContent(){
     let copyAllVideosButton = document.createElement("button");
     copyAllVideosButton.textContent = "Copiar videos"
     copyAllVideosButton.id = "copyAllVideosButton";
-    copyAllVideosButton.onclick = copyAllVideos();
+    copyAllVideosButton.setAttribute("onclick","copyAllVideos()");
 
     let shareAllVideosButton = document.createElement("button");
     shareAllVideosButton.textContent = "Compartir videos"
     shareAllVideosButton.id = "shareAllVideosButton";
-    // shareAllVideosButton.onclick = shareAllVideos();
     shareAllVideosButton.setAttribute("onclick","shareAllVideos()");
 
     buttonsDiv.append(copyAllVideosButton);
