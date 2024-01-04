@@ -155,7 +155,7 @@ async function createTable(){
         table.insertAdjacentHTML("beforeend", `
     <tr>
     <td><video src="${element.backgroundUrls}#t=0.001" preload="metadata" type="video/mp4" width="100"></video></td>
-    <td class="scriptText">${element.scriptText}</td>
+    <td class="scriptText"><div>${element.scriptText}</div></td>
     <td><a href="${element.backgroundUrls}" download><button onclick="downloadVideo(this)">Descargar</button></a> </td>
     <td><button class="textButton" onclick="copyText(this)">Copiar texto</button></td>
     <td><button class="captionButtonWithoutHashtags" onclick="copyCaptionWithoutHashtags(this)" ${visibilitySin}>Sin #</button><button class="captionButtonWithHashtags" onclick="copyCaptionWithHashtags(this)" ${visibilityCon}>Con #</button></td>
