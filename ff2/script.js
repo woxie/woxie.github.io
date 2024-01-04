@@ -279,9 +279,7 @@ function downloadVideo(element) {
 async function shareVideo(element) {
     try {
         await navigator.share({
-            title: "",
             text: element.value,
-            url: "",
         });
         console.log('Successful share')
       } catch (error) {
