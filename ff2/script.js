@@ -13,7 +13,6 @@ let lastHashtagStatus = document.querySelector('input[name="hashtags"]:checked')
 //     console.log("hola "+element);
 //   }));
 
-
 // textButton.addEventListener("click",)
 // captionButtonWithHashtags.addEventListener("click",copyCaptionWithHashtags(this))
 // captionButtonWithoutHashtags.addEventListener("click",copyCaptionWithoutHashtags(this))
@@ -25,8 +24,6 @@ let lastHashtagStatus = document.querySelector('input[name="hashtags"]:checked')
 // Array.from(captionButtonWithoutHashtags).forEach(function(element) {
 //     element.addEventListener('click', function(){copyCaptionWithoutHashtags()});
 //   });
-
-
 
 // mainButton.addEventListener("click",runProject);
 // resetButton.addEventListener("click",resetFields);
