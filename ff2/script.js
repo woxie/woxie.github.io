@@ -182,20 +182,27 @@ async function insertContent(){
         contentSection.append(table);
     }
     loadingText.remove();
+
+    let buttonsDiv = document.createElement("div");
+    buttonsDiv.id = "buttonsDiv";
     
     let copyAllVideosButton = document.createElement("button");
-    copyAllVideosButton.textContent = "Copiar Videos"
+    copyAllVideosButton.textContent = "Copiar videos"
     copyAllVideosButton.id = "copyAllVideosButton";
     copyAllVideosButton.onclick = copyAllVideos();
 
     let shareAllVideosButton = document.createElement("button");
-    shareAllVideosButton.textContent = "Compartir Videos"
+    shareAllVideosButton.textContent = "Compartir videos"
     shareAllVideosButton.id = "shareAllVideosButton";
     // shareAllVideosButton.onclick = shareAllVideos();
     shareAllVideosButton.setAttribute("onclick","shareAllVideos()");
 
-    contentSection.prepend(shareAllVideosButton);
-    contentSection.prepend(copyAllVideosButton);
+    buttonsDiv.append(copyAllVideosButton);
+    buttonsDiv.append(shareAllVideosButton);
+
+    contentSection.prepend(buttonsDiv);
+    // contentSection.prepend(shareAllVideosButton);
+    // contentSection.prepend(copyAllVideosButton);
 
     saveLocalStorage();
 }
