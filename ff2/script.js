@@ -182,6 +182,21 @@ async function insertContent(){
         contentSection.append(table);
     }
     loadingText.remove();
+    
+    let copyAllVideosButton = document.createElement("button");
+    copyAllVideosButton.textContent = "Copiar Videos"
+    copyAllVideosButton.id = "copyAllVideosButton";
+    copyAllVideosButton.onclick = copyAllVideos();
+
+    let shareAllVideosButton = document.createElement("button");
+    shareAllVideosButton.textContent = "Compartir Videos"
+    shareAllVideosButton.id = "shareAllVideosButton";
+    // shareAllVideosButton.onclick = shareAllVideos();
+    shareAllVideosButton.setAttribute("onclick","shareAllVideos()");
+
+    contentSection.prepend(shareAllVideosButton);
+    contentSection.prepend(copyAllVideosButton);
+
     saveLocalStorage();
 }
 
@@ -274,6 +289,27 @@ function downloadVideo(element) {
     let row = element.parentElement.parentElement.parentElement.parentElement;
     row.style.backgroundColor = "blue";
     saveLocalStorage();
+}
+
+function copyAllVideos(){
+    let videoLinksArray = Array.from(document.getElementsByClassName("videoLinks"));
+    let videoLinksString = videoLinksArray.join("\n");
+    console.log(videoLinksString);
+    navigator.clipboard.writeText(videoLinksString);
+}
+
+async function shareAllVideos(){
+    let videoLinksArray = Array.from(document.getElementsByClassName("videoLinks"));
+    let videoLinksString = videoLinksArray.join("\n");
+    console.log(videoLinksString);
+    try {
+        await navigator.share({
+            text: videoLinksString,
+        });
+        console.log('Successful share')
+      } catch (error) {
+        console.log('Error sharing', error);
+      }
 }
 
 async function shareVideo(element) {
