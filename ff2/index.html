@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./script.js" async></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./script.js" async></script>
 </head>
+
 <body>
-    <form action="" name="" method="get">
-        <fieldset>
-            <legend>El ultimo video tiene hashtags?</legend>
-            <div>
-              <input type="radio" id="con" name="hashtags" value="con"/>
-              <label for="huey">Con hashtags</label>
-            </div>
-          
-            <div>
-              <input type="radio" id="sin" name="hashtags" value="sin" checked/>
-              <label for="dewey">Sin hashtags</label>
-            </div>
-          </fieldset>
-    </form>
+  <section id="settings">
+  <form id="mainForm" action="javascript:insertContent()" name="" method="get">
+    <div>
+      <label for="accountsInput">Seleccione la cantidad de cuentas:</label>
+      <select required name="accountsInput" id="accountsInput">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+      </select>
+    </div>
+    <div>
+      <label for="daysInput">Seleccione la cantidad de días:</label>
+      <select required name="daysInput" id="daysInput">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+    <div required id="hashtagsFieldset">
+      <legend>¿El último video tiene hashtags?:</legend>
+        <input required type="radio" id="con" name="hashtags" value="con" />
+        <label for="con">Sí</label>
+        <input type="radio" id="sin" name="hashtags" value="sin" />
+        <label for="sin">No</label>
+    </div>
+    <input type="submit" id="mainButton" value="Obtener videos"></input>
+  </form>
+  <button id="resetButton">Limpiar</button>
+</section>
+  <section id="content">
+  </section>
 </body>
+
 </html>
