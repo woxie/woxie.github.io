@@ -279,9 +279,9 @@ function downloadVideo(element) {
 async function shareVideo(element) {
     try {
         await navigator.share({
-            title: "MDN",
-            text: "Learn web development on MDN!",
-            url: "https://developer.mozilla.org",
+            title: "",
+            text: element.value,
+            url: "",
         });
         console.log('Successful share')
       } catch (error) {
