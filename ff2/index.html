@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" async></script>
+</head>
+
+<body>
+  <section id="settings">
+  <form id="mainForm" action="javascript:insertContent()" name="" method="get">
+    <div class="menu">
+      <label for="accountsInput">Seleccione la cantidad de cuentas:</label>
+      <select required name="accountsInput" id="accountsInput">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+      </select>
+    </div>
+    <div class="menu">
+      <label for="daysInput">Seleccione la cantidad de días:</label>
+      <select required name="daysInput" id="daysInput">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+    <div required id="hashtagsFieldset">
+      <p>¿El último video tiene hashtags?:</p>
+        <input required type="radio" id="con" name="hashtags" value="con" />
+        <label for="con">Sí</label>
+        <input type="radio" id="sin" name="hashtags" value="sin" />
+        <label for="sin">No</label>
+    </div>
+    <div class="button"><input type="submit" id="mainButton" value="Obtener videos"></input></div>
+  </form>
+  <div class="button"><button id="resetButton">Limpiar</button></div>
+</section>
+  <section id="content">
+  </section>
+</body>
+
+</html>
