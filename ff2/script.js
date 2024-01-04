@@ -156,7 +156,7 @@ async function createTable(){
     <tr>
     <td><video src="${element.backgroundUrls}#t=0.001" preload="metadata" type="video/mp4" width="100"></video></td>
     <td class="scriptText"><div>${element.scriptText}</div></td>
-    <td><a href="${element.backgroundUrls}" download><button onclick="downloadVideo(this)">Descargar</button></a> </td>
+    <td><div><a class="videoLinks" href="${element.backgroundUrls}" download><button onclick="downloadVideo(this)">Descargar</button></a></div><div><button value="${element.backgroundUrls}" onClick="shareVideo(this)">Compartir</button></div></td>
     <td><button class="textButton" onclick="copyText(this)">Copiar texto</button></td>
     <td><button class="captionButtonWithoutHashtags" onclick="copyCaptionWithoutHashtags(this)" ${visibilitySin}>Sin #</button><button class="captionButtonWithHashtags" onclick="copyCaptionWithHashtags(this)" ${visibilityCon}>Con #</button></td>
     </tr>
@@ -271,6 +271,22 @@ function reassignVariables(){
 }
 
 function downloadVideo(element) {
+    let row = element.parentElement.parentElement.parentElement.parentElement;
+    row.style.backgroundColor = "blue";
+    saveLocalStorage();
+}
+
+async function shareVideo(element) {
+    try {
+        await navigator.share({
+            title: "MDN",
+            text: "Learn web development on MDN!",
+            url: "https://developer.mozilla.org",
+        });
+        console.log('Successful share')
+      } catch (error) {
+        console.log('Error sharing', error);
+      }
     let row = element.parentElement.parentElement.parentElement;
     row.style.backgroundColor = "blue";
     saveLocalStorage();
