@@ -88,7 +88,7 @@ async function filterOutErrors(){
         // console.log(dataKeys);
         // console.log(data.scriptType);
         // console.log(counter)
-        if (errorCounter == 5) {
+        if (errorCounter == 10) {
             contentSection.innerHTML="Error de servidor";
             throw new Error("Limit exceeded");
         }
@@ -319,6 +319,8 @@ async function shareAllVideos(){
 }
 
 async function shareVideo(element) {
+    let row = element.parentElement.parentElement.parentElement;
+    row.style.backgroundColor = "blue";
     try {
         await navigator.share({
             text: element.value,
@@ -327,8 +329,6 @@ async function shareVideo(element) {
       } catch (error) {
         console.log('Error sharing', error);
       }
-    let row = element.parentElement.parentElement.parentElement;
-    row.style.backgroundColor = "blue";
     saveLocalStorage();
 }
 
