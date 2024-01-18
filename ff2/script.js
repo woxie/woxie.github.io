@@ -81,6 +81,7 @@ async function filterOutErrors(){
     let data;
     let errorCounter = 0;
     while (dataKeys == 1) {
+        console.log("Cantidad de errores: "+errorCounter);
         errorCounter++;
         data = await getData();
         dataKeys = Object.keys(data).length;
