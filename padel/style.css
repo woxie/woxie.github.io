@@ -1,0 +1,52 @@
+/* Mobile-first styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  background: #f7f7f7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+}
+
+.court-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  /* Additional styling for larger screens if needed */
+}

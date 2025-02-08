@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Padel Match Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Padel Match Tracker</h1>
+
+      <!-- Player Input Section -->
+      <section id="inputSection">
+        <h2>Player Input</h2>
+        <textarea
+          id="playerInput"
+          placeholder="Enter players (e.g., Jose 5)"
+        ></textarea>
+        <br />
+        <button id="addPlayersBtn">Add Players</button>
+        <button id="clearPlayersBtn">Clear Players</button>
+      </section>
+
+      <!-- Player Table Section (Table1) -->
+      <section id="playerTableSection">
+        <h2>Player List</h2>
+        <table id="playerTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Rank</th>
+              <th>Away</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Player rows will be inserted here dynamically -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  id="newPlayerName"
+                  placeholder="New player name"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  id="newPlayerRank"
+                  min="1"
+                  max="10"
+                  placeholder="Rank"
+                />
+              </td>
+              <td>N/A</td>
+              <td><button id="addNewPlayerBtn">Add</button></td>
+            </tr>
+          </tfoot>
+        </table>
+        <!-- Apply Changes button is now below Table1 -->
+        <button id="applyPlayerChangesBtn">Apply Changes</button>
+      </section>
+
+      <!-- Player Stats Section (Table2) -->
+      <section id="statsSection">
+        <h2>Player Stats</h2>
+        <table id="statsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Matches Played</th>
+              <th>Wins</th>
+              <th>Losses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Stats rows will be inserted here dynamically -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Court Settings Section -->
+      <section id="courtControlSection">
+        <h2>Court Settings</h2>
+        <div class="court-controls">
+          <button id="decreaseCourtsBtn">-</button>
+          <span id="courtCountDisplay">1</span>
+          <button id="increaseCourtsBtn">+</button>
+        </div>
+        <button id="applyCourtsBtn">Apply Court Changes</button>
+      </section>
+
+      <!-- Court Matches Section -->
+      <section id="courtMatchesSection">
+        <h2>Court Matches</h2>
+        <div id="courtsContainer">
+          <!-- For each court, one match will be displayed -->
+        </div>
+      </section>
+
+      <!-- Match Log Section -->
+      <section id="matchLogSection">
+        <h2>Match Log</h2>
+        <table id="matchLogTable">
+          <thead>
+            <tr>
+              <th>Team A</th>
+              <th>Team B</th>
+              <th>Winner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Completed matches will be logged here -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
